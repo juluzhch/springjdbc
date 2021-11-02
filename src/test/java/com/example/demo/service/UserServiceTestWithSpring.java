@@ -12,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class UserServiceTestWithSpring {
 
     final static String Type_Transaction_FactoryBean="ProxyFactoryBean";
-    final static String Type_Transaction_Aop="ProxyFactoryBean";
+    final static String Type_Transaction_Aop="AOP_TX";
     static String defaultTransactionType=Type_Transaction_FactoryBean;
 
     @BeforeAll
