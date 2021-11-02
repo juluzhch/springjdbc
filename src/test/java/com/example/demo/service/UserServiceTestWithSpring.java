@@ -18,6 +18,7 @@ public class UserServiceTestWithSpring {
     @BeforeAll
     public static void init(){
         defaultTransactionType=Type_Transaction_Aop;
+//        defaultTransactionType=Type_Transaction_FactoryBean;
     }
 
     @Test
