@@ -5,6 +5,8 @@ import com.example.demo.entity.Student;
 import com.example.demo.dao.support.DataSourceSupport;
 import com.example.demo.utils;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -50,6 +52,11 @@ public class UserServiceTest {
         userService.setTransactionManager(transactionManager);
 
         return userService;
+    }
+
+    private UserService getUserServiceOfXmlTransaction(){
+        ApplicationContext ac=new ClassPathXmlApplicationContext("application-xml-transaction.xml");
+        return (UserService) ac.getBean("userService");
     }
 
     private Student getNewStudent(String name){
