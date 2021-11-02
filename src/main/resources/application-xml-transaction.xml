@@ -13,7 +13,7 @@
 
     <bean id="userService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
       p:transactionManager-ref="txManager"
-      p:target-ref="studentDao">
+      p:target-ref="userServiceTarget">
         <property name="transactionAttributes">
             <props>
                 <prop key="*">PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED</prop>
